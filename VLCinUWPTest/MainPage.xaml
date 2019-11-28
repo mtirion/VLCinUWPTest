@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="VLCinUWPTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VLCinUWPTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vlc="using:LibVLCSharp.Platforms.UWP"
+    mc:Ignorable="d"
+    RequestedTheme="Dark"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <vlc:VideoView x:Name="VideoView" Grid.Row="0" />
+
+        <Grid Grid.Row="1" Margin="12">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Play" Click="Play_Click" Width="120" />
+                <Button Content="Skip to end" Click="SkipToEnd_Click" Width="120" Margin="10,0,0,0" />
+                <Button Content="Stop" Click="Stop_Click" Width="120" Margin="10,0,0,0" />
+            </StackPanel>
+            <TextBlock x:Name="StatusText" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</Page>
